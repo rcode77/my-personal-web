@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Nav Start -->
+    <nav>
+        <div class="left-side">
+            <a href="index.html">
+                <img src="assets/logo.png" />
+            </a>
+
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="project.html" target="blank">My Project</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="right-side">
+            <a href="contact.html">Contact Me</a>
+        </div>
+    </nav>
+    <!-- Nav End -->
+    <div class="my-project">
+        <div class="container">
+            <form onsubmit="addProject(event)">
+                <h1>ADD MY PROJECT</h1>
+
+                <div class="project-name">
+                    <label for="input-project">Name</label>
+                    <input type="text" id="input-project" />
+                </div>
+
+                <div class="date">
+                    <div class="left">
+                        <label for="start-date">Start Date</label>
+                        <input type="date" id="start-date" />
+                    </div>
+                    <div class="right">
+                        <label for="end-date">End Date</label>
+                        <input type="date" id="end-date" />
+                    </div>
+                </div>
+
+                <div class="desc">
+                    <label for="input-description">Description</label>
+                    <textarea id="input-description"></textarea>
+                </div>
+
+                <div class="tech">
+                    <label for="technologies">Technologies</label>
+                    <div class="check-container">
+                        <div class="first">
+                            <div>
+                                <input type="checkbox" id="check-tech" alt="check" value="Node-JS.png" />
+                                <label for="node-js">Node JS</label>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" id="check-tech" alt="check" value="React-JS.png" />
+                                <label for="react-js">React JS</label>
+                            </div>
+                        </div>
+                        <div class="second">
+                            <div>
+                                <input type="checkbox" id="check-tech" alt="check" value="Next-JS.png" />
+                                <label for="next-js">Next JS</label>
+                            </div>
+
+                            <div>
+                                <input type="checkbox" id="check-tech" alt="check" value="TypeScript.png" />
+                                <label for="typescript">TypeScript</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label>Upload Image</label>
+                    <div class="input-project-image-group">
+                        <label for="input-project-image">
+                            <p>Choose</p>
+                            <img src="assets/file.png" alt="file" />
+                        </label>
+                        <input type="file" id="input-project-image" hidden />
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button>Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="my-project-list">
+        <header>
+            <h1>My Project</h1>
+        </header>
+        <div class="project-list" id="contents">
+            <div class="list-container">
+                <div class="project">
+                    <div>
+                        <img src="assets/Me.png" alt="" />
+                    </div>
+
+                    <div>
+                        <a href="project-detail.html">Dumbways Mobile App - 2022</a>
+                    </div>
+
+                    <div class="duration">
+                        <p>Durasi: 3 bulan</p>
+                    </div>
+
+                    <div class="desc-container">
+                        <p>
+                            App that used for dumbways student, it was deployed and can downloaded on playstore. Happy
+                            Download
+                        </p>
+                    </div>
+
+                    <div class="tech-skills">
+                        <img src="assets/Node-JS.png" alt="">
+                        <img src="assets/React-JS.png" alt="">
+                        <img src="assets/Next-JS.png" alt="">
+                        <img src="assets/Typescript.png" alt="">
+                    </div>
+
+                    <div class="btn">
+                        <div class="btn-conatiner">
+                            <button>edit</button>
+                            <button>delete</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <script src="project.js"></script>
+</body>
+
+</html>
