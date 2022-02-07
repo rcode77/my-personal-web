@@ -32,6 +32,8 @@ function renderProject() {
 
     let i = 0
     for (i; i < lengthData; i++) {
+        let checkIcons = projects[i].checkboxes.map(value => `<img src="assets/${value}">`)
+
         projectContainer.innerHTML += `
       <div class="project">
                     <div>
@@ -56,10 +58,7 @@ function renderProject() {
 
 
                     <div class="tech-skills">
-                        <img src="assets/${projects[i].checkboxes[0]}" alt="check">
-                        <img src="assets/${projects[i].checkboxes[1]}" alt="check">
-                        <img src="assets/${projects[i].checkboxes[2]}" alt="check">
-                        <img src="assets/${projects[i].checkboxes[3]}" alt="check">  
+                        `+ checkIcons + `
                     </div>
 
                     <div>
@@ -122,13 +121,16 @@ function getDistanceDuration() {
     let dateOne = new Date(startdate)
     let dateTwo = new Date(enddate)
 
-    let duration = Math.abs(dateOne - dateTwo);
-    let durationDistance = Math.floor(duration / (miliseconds * secondsInHour * hoursInDay))
+    let finalDate = Math.abs(dateOne - dateTwo);
+    let dateDistance = Math.floor(finalDate / (miliseconds * secondsInHour * hoursInDay))
 
-    if (durationDistance > 30) {
-        return `1 Month ${durationDistance - 30} Day`
+    if (dateDistance < 30) {
+        return `${dateDistance} Day`
     } else {
-        return `${durationDistance} Day`
-    }
+        let monthConvert = Math.floor(finalDate / (miliseconds * secondsInHour * hoursInDay * 30));
+        if (monthConvert >= 1) {
+            return `${monthConvert} Month`
+        }
 
+    }
 }
